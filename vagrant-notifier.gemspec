@@ -1,23 +1,24 @@
-# encoding: utf-8
+# coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-version = '0.1.0'
+Gem::Specification.new do |spec|
+  spec.name          = 'vagrant-notifier'
+  spec.version       = '0.1.0'
+  spec.authors       = ['Robert Coleman']
+  spec.email         = ['github@robert.net.nz']
+  spec.summary       = %q{Send a notification when a Vagrant up is completed.}
+  spec.description   = %q{Send a notification when a Vagrant up is completed.}
+  spec.homepage      = 'https://github.com/rjocoleman/vagrant-notifier'
+  spec.license       = 'MIT'
 
-Gem::Specification.new do |gem|
-  gem.name          = "vagrant-notifier"
-  gem.version       = version
-  gem.authors       = ["Robert Coleman"]
-  gem.email         = ["github@robert.net.nz"]
-  gem.description   = %q{Notify.}
-  gem.summary       = %q{Notify.}
-  gem.homepage      = "https://github.com/rjocoleman/vagrant-notifier/"
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ['lib']
 
-  gem.files         = `git ls-files`.split($/)
-  gem.test_files    = gem.files.grep(%r{^(spec)/})
-  # gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.require_paths = ["lib"]
-  
-  gem.signing_key = '/Users/rjocoleman/.gemcert/gem-private_key.pem'
-  gem.cert_chain  = ['gem-public_cert.pem']
+  spec.add_development_dependency 'bundler', '~> 1.6'
+  spec.add_development_dependency 'rake'
+
+  spec.add_dependency 'terminal-notifier', '~> 1.6.0'
 end

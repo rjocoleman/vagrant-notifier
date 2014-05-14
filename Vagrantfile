@@ -1,5 +1,3 @@
-Vagrant.require_plugin "vagrant-notifier"
-
-Vagrant.configure("2") do |config|
-  config.vm.box = "precise64"
+Vagrant.configure('2') do |config|
+  config.vm.box = 'precise64'
 end
