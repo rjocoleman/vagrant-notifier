@@ -2,7 +2,7 @@
 
 For Vagrant 1.5+.
 
-Sends a notification via [TerminalNotifier](https://github.com/alloy/terminal-notifier) when `$ vagrant up` is finished.
+Sends a notification via [TerminalNotifier](https://github.com/alloy/terminal-notifier) when `$ vagrant` is finished.
 
 ## Installation
 
